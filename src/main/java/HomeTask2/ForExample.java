@@ -1,5 +1,7 @@
 package HomeTask2;
 
+import org.openqa.selenium.WebDriverException;
+
 public class ForExample {
     public static void main(String[] args) {
         int i;
