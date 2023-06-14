@@ -52,6 +52,12 @@ public class SearchOffice {
     @Test
     public void searchOffice() throws InterruptedException {
         driver.navigate().to("https://novaposhta.ua/");
+        WebElement popUp = driver.findElement(By.xpath("//img[@class='popup_info_img']"));
+        if (popUp.isDisplayed()){
+            WebElement popUpClose = driver.findElement(By.xpath("//div[@id='popup_info']//i"));
+            popUpClose.click();
+        }
+        else {};
         By officesLocator = By.partialLinkText("Відділення");
         wait.until(visibilityOfElementLocated(officesLocator));
         WebElement office = driver.findElement(officesLocator);

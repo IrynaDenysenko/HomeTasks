@@ -35,6 +35,12 @@ public class FirstTest {
     public void firstTest(){
         driver.navigate().to("https://novaposhta.ua/");
         WebElement number = driver.findElement(By.id("cargo_number"));
+        WebElement popUp = driver.findElement(By.xpath("//img[@class='popup_info_img']"));
+        if (popUp.isDisplayed()){
+            WebElement popUpClose = driver.findElement(By.xpath("//div[@id='popup_info']//i"));
+            popUpClose.click();
+        }
+        else {};
         number.sendKeys("20400304107084");
         WebElement submit = driver.findElement(By.xpath("//form[@action='/tracking/']/input[@type='submit']"));
         submit.click();

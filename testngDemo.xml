@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="DemoSuiteTest" parallel="methods" treadCount="5">
+<test name = "DemoTest1">
+    <classes>
+        <class name="HomeTask1.TestSuite" />
+    </classes>
+</test>
+    <test name = "DemoTest2">
+        <classes>
+            <class name="HomeTask1.CostCalculate" />
+            <methods>
+                <exclude name="costExcluded"/>
+            </methods>
+        </classes>
+    </test>
+<test name="DemoTest3">
+    <groups>
+        <run>
+            <include name="smokeTest"/>
+        </run>
+    </groups>
+    <classes>
+        <class name="HomeTask1.FillInResume" />
+    </classes>
+    <parameter name="browser" value="chrome" />
+
+
+</test>
+</suite>
